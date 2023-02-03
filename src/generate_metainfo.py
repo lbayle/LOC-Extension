@@ -18,7 +18,7 @@ cur_dir = os.getcwd()
 
 # A unique ID for the extension.
 addin_id = 'com.loc.crypto.getinfo'
-addin_version = '0.3.0'
+addin_version = '0.3.1'
 addin_displayname = 'LOC-Extension: LibreOffice calc Cryptocurrency market functions.'
 addin_publisher_link = 'https://github.com/walkjivefly/LOC-Extension'
 addin_publisher_name = 'Mark Brooker'
@@ -81,9 +81,9 @@ def define_function(xml_file, function_name, description, parameters):
     xml_file.write('        <prop oor:name="Category">\n')
     xml_file.write('          <value>Add-In</value>\n')
     xml_file.write('        </prop>\n')
-    xml_file.write('        <prop oor:name="CompatibilityName">\n')
-    xml_file.write('          <value xml:lang="en">AutoAddIn.LOC.' + function_name + '</value>\n')
-    xml_file.write('        </prop>\n')
+#    xml_file.write('        <prop oor:name="CompatibilityName">\n')
+#    xml_file.write('          <value xml:lang="en">AutoAddIn.LOC.' + function_name + '</value>\n')
+#    xml_file.write('        </prop>\n')
     xml_file.write('        <node oor:name="Parameters">\n')
 
     for p, desc in parameters:
