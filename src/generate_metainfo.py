@@ -18,7 +18,7 @@ cur_dir = os.getcwd()
 
 # A unique ID for the extension.
 addin_id = 'com.loc.crypto.getinfo'
-addin_version = '0.3.1'
+addin_version = '0.3.2'
 addin_displayname = 'LOC-Extension: LibreOffice calc Cryptocurrency market functions.'
 addin_publisher_link = 'https://github.com/walkjivefly/LOC-Extension'
 addin_publisher_name = 'Mark Brooker'
@@ -109,9 +109,6 @@ loc_xml.write('<node oor:name="AddInInfo">\n')
 loc_xml.write('  <node oor:name="' + instance_id + '" oor:op="replace">\n')
 loc_xml.write('    <node oor:name="AddInFunctions">\n')
 
-define_function(loc_xml, \
-    'runCommand', 'Runs an arbitrary command.  a = "COMMAND"', \
-    [('a', 'The command to be executed.')])
 define_function(loc_xml, \
     'xrs', 'Runs an XRouter service.  a = "COMMAND", b = "PARAMETERS"', \
     [('a', 'The command to be executed.'), ('b', 'Optional parameters.')])

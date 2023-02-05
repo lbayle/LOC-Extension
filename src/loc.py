@@ -91,18 +91,6 @@ class LocImpl(unohelper.Base, LOC):
             exchange = getattr(ikccxt, id)
             exchanges[id] = exchange()
 
-    def runCommand( self, command ):
-        """Run a command"""
-        logger.info('runCommand attempting ' + command)
-        try:
-            result = os.popen(command).read().rstrip()
-            logger.info('result=' + result)
-        except:
-            logger.error('runCommand: exception {}'.format(sys.exc_info()[0]))
-            result = 'Exception encountered'
-        return result
-
-
     def xrs( self, command, parms ):
         """Call XRouter service"""
         logger.info('xrs attempting ' + command + " " + parms)
@@ -110,9 +98,9 @@ class LocImpl(unohelper.Base, LOC):
             result = json.load(os.popen("blocknet-cli " + command + " " + parms))['reply']
             logger.info('result=' + str(result))
         except:
-            logger.error('runCommand: exception {}'.format(sys.exc_info()[0]))
-            logger.error('runCommand: exception {}'.format(sys.exc_info()[1]))
-            logger.error('runCommand: exception {}'.format(sys.exc_info()[2]))
+            logger.error('xrs: exception {}'.format(sys.exc_info()[0]))
+            logger.error('xrs: exception {}'.format(sys.exc_info()[1]))
+            logger.error('xrs: exception {}'.format(sys.exc_info()[2]))
             result = 'Exception encountered'
         return result
 
@@ -124,9 +112,9 @@ class LocImpl(unohelper.Base, LOC):
             result = json.load(os.popen("blocknet-cli xrservice " + command + " " + parms))['reply']
             logger.info('result=' + str(result))
         except:
-            logger.error('runCommand: exception {}'.format(sys.exc_info()[0]))
-            logger.error('runCommand: exception {}'.format(sys.exc_info()[1]))
-            logger.error('runCommand: exception {}'.format(sys.exc_info()[2]))
+            logger.error('xcs: exception {}'.format(sys.exc_info()[0]))
+            logger.error('xcs: exception {}'.format(sys.exc_info()[1]))
+            logger.error('xcs: exception {}'.format(sys.exc_info()[2]))
             result = 'Exception encountered'
         return result
 
