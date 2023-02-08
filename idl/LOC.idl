@@ -4,7 +4,6 @@ module com { module loc { module crypto { module getinfo {
 
     interface LOC
     {
-      any runCommand( [in] string a);
       any getSouthXchange( [in] string a, [in] any b );
       any getPoloniex( [in] string a, [in] any b );
       any ccxt( [in] string a, [in] any b, [in] any c );
